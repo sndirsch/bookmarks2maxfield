@@ -20,7 +20,7 @@ Description:
     IITC Bookmark Plugin export in JSON format, e.g. 'bookmarks.json'
     
   output_file:
-    generated output in CSV format, e.g. 'test.csv'
+    generated output in CSV format, e.g. 'maxfield.csv'
 """  
 
 import sys

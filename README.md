@@ -9,8 +9,8 @@ uses the export of the IITC Bookmarks Plugin as input.
 
 1. Mark your portal set in IITC as bookmarks (Bookmarks Plugin).
 2. Export it as file.
-3. Run this script with the exported file as <input_file> and use the result
-(standard output or content of <output_file>) as input for Ingress Maxfield
+3. Run this script with the exported file as `<input_file>` and use the result
+(standard output or content of `<output_file>`) as input for Ingress Maxfield
 (http://www.ingress-maxfield.com)
 
 ## Usage

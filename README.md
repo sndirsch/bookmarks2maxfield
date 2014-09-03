@@ -15,14 +15,16 @@ uses the export of the IITC Bookmarks Plugin as input.
 
 ## Usage
 
-   `bookmarks2maxfield <input_file> [<output_file>]`
+```
+bookmarks2maxfield <input_file> [<output_file>]
+```
 
 ### Options
 
 ```
-    input_file:
-        IITC Bookmark Plugin export in JSON format, e.g. 'bookmarks.json'
+input_file:
+  IITC Bookmark Plugin export in JSON format, e.g. 'bookmarks.json'
 
-    output_file:
-        generated output in CSV format, e.g. 'maxfield.csv'
+output_file:
+  generated output in CSV format, e.g. 'maxfield.csv'
 ```

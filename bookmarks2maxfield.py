@@ -3,7 +3,7 @@
 
 """
 Usage:
-  bookmarks2maxfield <input_file> [<output_file>]
+  bookmarks2maxfield.py <input_file> [<output_file>]
 
 Description:
   Input generator for Ingress Maxfield

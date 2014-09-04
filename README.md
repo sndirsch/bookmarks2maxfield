@@ -1,4 +1,4 @@
-# bookmarks2maxfield
+# bookmarks2maxfield.py
 
 ## Description
 
@@ -16,7 +16,7 @@ uses the export of the IITC Bookmarks Plugin as input.
 ## Usage
 
 ```
-bookmarks2maxfield <input_file> [<output_file>]
+bookmarks2maxfield.py <input_file> [<output_file>]
 ```
 
 ### Options

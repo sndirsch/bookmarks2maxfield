@@ -7,11 +7,11 @@ uses the export of the IITC Bookmarks Plugin as input.
 
 ## Prerequisites
 
-You'll need Python (version 2 and 3 is considered supported) as well as
-docopt.
+You'll need `Python` (version 2 and 3 is considered supported) as well as
+`docopt`.
 
-Install python-docopt package if required and available. Otherwise install
-docopt via:
+Install `python-docopt` package if required and available. Otherwise install
+`docopt` via `pip`:
 
 ```
 pip install docopt

@@ -43,7 +43,7 @@ with codecs.open(input_file,'r', encoding='utf-8') as f_input:
     for id in d['portals']['idOthers']['bkmrk']:
         gpscoords=d['portals']['idOthers']['bkmrk'][id]["latlng"]
         portalname=d['portals']['idOthers']['bkmrk'][id]["label"].replace(",","")
-        str = '%s,https://www.ingress.com/intel?ll=%s&z=18&pll=%s,0\n' % (portalname, gpscoords, gpscoords)
+        str = '%s;https://www.ingress.com/intel?ll=%s&z=18&pll=%s;0\n' % (portalname, gpscoords, gpscoords)
         if output_file != '':
             str = str.encode('utf-8')
             f_output.write(str)

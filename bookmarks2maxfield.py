@@ -34,24 +34,27 @@ input_file = args['<input_file>']
 output_file = ''
 if args['<output_file>'] != None:
     output_file = args['<output_file>']
-    f_output = codecs.open(output_file, 'wb')
+
+# Always write to stdout in UTF-8, independent of the locale:
+if sys.version_info < (3, 0):
+    sys.stdout = codecs.getwriter("utf-8")(sys.stdout)
+else:
+    sys.stdout = codecs.getwriter("utf-8")(sys.stdout.buffer)
 
 with codecs.open(input_file,'r', encoding='utf-8') as f_input:
 
     d = json.load(f_input)
-    
-    for id in d['portals']['idOthers']['bkmrk']:
+
+    output = ''
+    for id in sorted(
+            d['portals']['idOthers']['bkmrk'],
+            key=lambda x: d['portals']['idOthers']['bkmrk'][x]['label']):
         gpscoords=d['portals']['idOthers']['bkmrk'][id]["latlng"]
         portalname=d['portals']['idOthers']['bkmrk'][id]["label"]
-        str = '%s;https://www.ingress.com/intel?ll=%s&z=18&pll=%s;0\n' % (portalname, gpscoords, gpscoords)
-        if output_file != '':
-            str = str.encode('utf-8')
-            f_output.write(str)
+        output +='%s;https://www.ingress.com/intel?ll=%s&z=18&pll=%s;0\n' % (portalname, gpscoords, gpscoords)
+    if output:
+        if output_file:
+            with codecs.open(output_file, 'wb', encoding='utf-8') as f_output:
+                f_output.write(output)
         else:
-            if sys.version_info < (3, 0):
-                str = str.encode('utf-8')
-            sys.stdout.write(str)
-
-f_input.close()
-if output_file != '':
-    f_output.close()
+            sys.stdout.write(output)
